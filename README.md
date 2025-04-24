@@ -75,21 +75,26 @@ Before importing into Power BI, the raw data was cleaned using pandas:
 import pandas as pd
 
 #load the dataset
+
 df=pd.read_csv("WA_Fn-UseC_-HR-Employee-Attrition (1).csv")
 print(df)
 
 #drop irrevelant column
+
 df.drop(columns=['EmployeeCount','Over18','StandardHours','EmployeeNumber'],inplace=True)
 
 #Create some features
+
 df['IsOverTime']=df['OverTime'].map({'Yes':1,'No':0})
 df['AttritionFlag']=df['Attrition'].map({'Yes':1,'No':0})
 df['YearsWithCompanyRatio']=df['YearsWithCurrManager']/df['TotalWorkingYears']
 
 #fill any missing values
+
 df.fillna(0,inplace=True)
 
 #check missing values
+
 df.isnull().sum()
 df.to_csv("HR_Anlaytics.csv",index=False)
 
