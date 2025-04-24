@@ -78,7 +78,7 @@ import pandas as pd
 df=pd.read_csv("WA_Fn-UseC_-HR-Employee-Attrition (1).csv")
 print(df)
 
-# drop irrelevant colums
+#drop irrevelant column
 df.drop(columns=['EmployeeCount','Over18','StandardHours','EmployeeNumber'],inplace=True)
 
 #Create some features
@@ -92,7 +92,7 @@ df.fillna(0,inplace=True)
 #check missing values
 df.isnull().sum()
 df.to_csv("HR_Anlaytics.csv",index=False)
----
+
 
 How to Use This Project 🚀
 
